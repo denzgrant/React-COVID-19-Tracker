@@ -28,6 +28,9 @@ export const sortData = (data) => {
     const sortedData = [...data];
     return sortedData.sort((firstElem, secondElem) => (firstElem.cases > secondElem.cases ? -1 : 1));
 }
+export const prettyPrintStat = (stat) =>
+  stat ? `+${numeral(stat).format("0.0a")}` : "+0";
+  
 export const showDataOnMap = (data, casesType = "cases") =>
     data.map((country) => (
         <Circle
