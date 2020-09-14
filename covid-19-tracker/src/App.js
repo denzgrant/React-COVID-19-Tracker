@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
 import {
   MenuItem,
   FormControl,
@@ -10,8 +11,8 @@ import InfoBox from './InfoBox';
 import Map from './Map';
 import Table from './Table';
 import { sortData } from './util'
-import LineGraph from './LineGraph'; 
-import './App.css';
+import LineGraph from './LineGraph';
+import "leaflet/dist/leaflet.css";
 
 
 function App() {
@@ -19,6 +20,10 @@ function App() {
   const [country, setCountry] = useState('worldwide');
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
+  const [mapCountries, setMapCountries] = useState([]);
+  const [casesType, setCasesType] = useState("cases");
+  const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
+  const [mapZoom, setMapZoom] = useState(2.3);
 
   useEffect(() => {
     //display worldwide info on first load
@@ -43,6 +48,7 @@ function App() {
 
           const sortedData = sortData(data);
           setTableData(sortedData);
+          setMapCountries(data);
           setCountries(countries);
         })
     }
@@ -61,9 +67,9 @@ function App() {
       .then(response => response.json())
       .then(data => {
         setCountry(countryCode);
-
-
         setCountryInfo(data);
+        setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+        setMapZoom(4);
       });
   };
   console.log("Country info >>>", countryInfo);
@@ -99,7 +105,12 @@ function App() {
             total={countryInfo.deaths} />
         </div>
 
-        <Map />
+        <Map
+          countries={mapCountries}
+          casesType={casesType}
+          center={mapCenter}
+          zoom={mapZoom}
+        />
       </div>
       <Card className="app__right">
         <CardContent>
