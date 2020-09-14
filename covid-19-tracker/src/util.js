@@ -29,11 +29,12 @@ export const sortData = (data) => {
     return sortedData.sort((firstElem, secondElem) => (firstElem.cases > secondElem.cases ? -1 : 1));
 }
 export const prettyPrintStat = (stat) =>
-  stat ? `+${numeral(stat).format("0.0a")}` : "+0";
-  
+    stat ? `+${numeral(stat).format("0.0a")}` : "+0";
+
 export const showDataOnMap = (data, casesType = "cases") =>
-    data.map((country) => (
+    data.map((country, key) => (
         <Circle
+            key={key}
             center={[country.countryInfo.lat, country.countryInfo.long]}
             color={casesTypeColors[casesType].hex}
             fillColor={casesTypeColors[casesType].hex}
