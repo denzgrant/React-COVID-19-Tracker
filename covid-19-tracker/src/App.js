@@ -38,9 +38,10 @@ const App = () => {
       fetch("https://disease.sh/v3/covid-19/countries")
         .then((response) => response.json())
         .then((data) => {
-          const countries = data.map((country) => ({
+          const countries = data.map((country, key) => ({
             name: country.country,
             value: country.countryInfo.iso2,
+            key: key
           }));
           let sortedData = sortData(data);
           setCountries(countries);
@@ -52,9 +53,8 @@ const App = () => {
     getCountriesData();
   }, []);
 
-
-  const onCountryChange = async (event) => {
-    const countryCode = event.target.value;
+  const onCountryChange = async (e) => {
+    const countryCode = e.target.value;
 
     const url =
       countryCode === "worldwide"

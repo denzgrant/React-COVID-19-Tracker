@@ -6,11 +6,9 @@ function InfoBox({ title, cases, total, active, isRed, ...props }) {
   return (
     <Card
       onClick={props.onClick}
-      className={`infoBox ${active && "infoBox--selected"} ${
-        isRed && "infoBox--red"
-      }`}
+      className={`infoBox ${active && "infoBox--selected"} ${isRed && "infoBox--red"
+        }`}
     >
-        {/* __ = element changed, -- = element modified*/}
       <CardContent>
         <Typography color="textSecondary" gutterBottom>
           {title}
