@@ -6,7 +6,7 @@
  <br>
  <strong>Demo: https://covid-19-tracker-7f085.web.app/</strong>
 </p>
-  <img src="/GoogleBooks.gif" alt="demogif">  
+  <img src="Covid-19Tracker.gif" alt="demogif">  
   <h2>Table of Contents</h2>
   <ul> 
    <li><a href="#Installation">Installation</a></li> 
