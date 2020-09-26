@@ -29,7 +29,7 @@
 | ----------- | ----------- |
 | `chart.js` | [chart.js](https://www.chartjs.org/) |
 | `leaflet` | [leaflet](https://leafletjs.com/) |
-| `disease.sh` | [disease.sh](https://disease.sh/ |
+| `disease.sh` | [disease.sh](https://disease.sh/)|
 | `numeral.js` | [numeral.js](http://numeraljs.com/) |
 
   <p></p>
