@@ -39,7 +39,7 @@
   <p>Anyone is free to contritbute to this project. Feel free to add on.</p>
   <h2 id="Questions">Questions</h2>
   <p style="strong">Any questions regarding this project, contact denzgrant@gmail.com directly.</p> 
-  <img src="https://avatars.githubusercontent.com/u/58059554?" alt="git hub profile picture" height="225" width="200">
+  <img src="https://avatars.githubusercontent.com/u/58059554?" alt="git hub profile picture" height="225" width="240">
    <img src="https://img.shields.io/github/followers/denzgrant?label=follow&style=social">
  
   
